@@ -1,0 +1,38 @@
+<html>
+	<head> 
+		<title>
+		Facemash
+		</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+	</head>
+<body>
+<div id="header">
+	<h1><a href="index.html">FACEMASH</a></h1>
+</div>
+<div id="main">
+	<table>
+		<tr>
+			<td>filename</td>
+			<td>points</td>
+			<td>won</td>
+			<td>lost</td>
+		</tr>
+		{% for row in rows %}
+		<tr>
+			<td>{{ row[0] }}</td>
+			<td>{{ row[1] }}</td>
+			<td>{{ row[2] }}</td>
+			<td>{{ row[3] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+<div id="footer">
+	<br />
+	<br/>
+	<a href="home">Home</a>
+	<a href="about.html">About</a>
+	<a href="rankings">Rankings</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+	<head> 
+		<title>
+		Facemash
+		</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+	</head>
+<body>
+<div id="header">
+	<h1><a href="index.html">FACEMASH</a></h1>
+</div>
+<div id="main">
+	<h3>Were we let in for our looks? No. Will we be judged on them? Yes.</h3>
+	<h2>Who's Hotter? Click to Choose.</h2>
+	<br/>
+	<form action="/home" method="POST">
+	<table>
+		<tr>
+			<td id="1" >
+				<button name='send_button' type="submit"
+			       value={{ row[0][0] }};{{ row[1][0] }}>
+					<img src="{{ url_for('static', filename='images/' + row[0][1]) }}" />
+				</button>
+			</td>
+			<td>OR</td>
+			<td id="2">
+				<button name='send_button' type="submit"
+			       value={{ row[1][0] }};{{ row[0][0] }}>
+					<img src="{{ url_for('static', filename='images/' + row[1][1]) }}" />
+				</button>
+			</td>
+		</tr>
+	</table>
+	</form>
+</div>
+<div id="footer">
+	<br />
+	<br/>
+	<a href="home">Home</a>
+	<a href="about.html">About</a>
+	<a href="rankings">Rankings</a>
+</div>
+</body>
+</html>
